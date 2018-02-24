@@ -36,27 +36,11 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-//        $input = $request->all();
-//        Post::create($input);
-//
-//        return redirect()->back();
+        $input = $request->all();
+        Post::create($input);
 
-        $this->validate(request(),[
-            'title' => 'required',
-            'body' => 'required',
-            'image' => 'required',
-            'category' => 'required'
+        return redirect()->back();
 
-        ]);
-
-        Post::create(request([
-            'title' => redirect('title'),
-            'body' => redirect('body'),
-            'image' => redirect('image'),
-            'category' => redirect('category_id'),
-        ]));
-
-        return view('posts.index');
 
     }
 

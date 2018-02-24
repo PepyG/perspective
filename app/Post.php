@@ -10,8 +10,4 @@ class Post extends Model
         'title', 'body', 'image'
     ];
 
-    public function category() {
-        return $this->belongsTo('App\Category');
-    }
-
 }
